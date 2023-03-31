@@ -1,0 +1,280 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Black';
+    src: url('../fonts/Lato-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//variables
+$color-verde: #009999;
+$color-morado: #9a2d9b;
+
+.navbar-header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.navbar-nav {
+    &:hover {
+        font-family: 'Lato-Black', sans-serif;
+
+    }
+}
+
+.container-fluid {
+    font-size: 1.2em;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin: 0 17% 0 17%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+}
+.nav{
+    display: inline-flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.navbar-nav li {
+    display: inline-flex;
+    align-items: center;
+
+    &+li {
+        &:before {
+            content: " | ";
+            color: $color-verde;
+        }
+    }
+}
+
+section {
+    width: 70%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-left: 10%;
+
+    .cardPrimaria {
+        display: inline-flex;
+        width: 28%;
+        height: auto;
+        margin: 1%;
+        border-radius: 10px;
+        background: $color-verde;
+        border: 10px solid $color-verde;
+
+        &:hover {
+            background: $color-morado;
+            border: 10px solid $color-morado; // color de fondo al pasar el cursor
+        }
+
+        .cardSecundaria {
+            border: 3px dotted white;
+            border-radius: 10px;
+
+            .cardTerciario {
+                background-color: white;
+                padding: 5px;
+                border-radius: 10px;
+                border: 1vh solid $color-verde;
+
+                &:hover {
+                    border: 1vh solid $color-morado; // color de fondo al pasar el cursor
+                }
+
+                .card-img-top {
+                    width: 100%;
+                    height: 70%;
+                    padding: 0 15% 0 15%;
+                    border-bottom: 3px dotted $color-verde;
+
+                    &:hover {
+                        border-color: $color-morado; // color de fondo al pasar el cursor
+                    }
+                }
+
+                p {
+                    height: 30%;
+                    margin: 4vh 0 4vh 0;
+                    text-align: center;
+
+                    &:hover {
+                        font-family: 'Lato-Black', sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.redes {
+    width: 100%;
+    text-align: right;
+
+    .iconos {
+        background: $color-morado;
+        width: 4em;
+        border-radius: 50%;
+        align-items: flex-end;
+    }
+}
+
+aside {
+    display: inline-flex;
+    width: 24%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    .cardPri {
+        width: 45%;
+        display: inline-flex;
+        margin-bottom: 2vh;
+        height: 60%;
+        border-radius: 10px;
+        background: $color-morado;
+        border: 8px solid $color-morado;
+
+        .cardSec {
+            border: 2px solid white;
+            border-radius: 10px;
+
+            .cardTer {
+                background-color: white;
+                padding: 2px;
+                border-radius: 10px;
+                border: 3px solid $color-morado;
+
+                .card-img-top {
+                    width: 80%;
+                }
+
+                p {
+                    margin: 1vh 0 1vh 0;
+                    font-size: 0.7em;
+                    text-align: center;
+                }
+
+            }
+        }
+    }
+}
+
+
+#cardPreview {
+    position: fixed;
+    top: 15%;
+    right: 8%;
+    width: 10%;
+    z-index: 9999;
+    background: white;
+    border: 5px solid $color-verde;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    p {
+        font-size: 0.8em;
+        color: $color-morado;
+        font-weight: bold;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+
+
+@media screen and (max-width: 1367px) {
+    #cardPreview {
+        width: 10%;
+    }
+
+    aside {
+        width: 18%;
+
+        .cardPri {
+            width: 70%;
+        }
+    }
+
+    section {
+        width: 80%;
+        padding: 0;
+    }
+
+    .container-fluid {
+        margin: 0 5% 0 5%;
+        font-size: 1.5em;
+    }
+    @media screen and (max-width: 1024px) {
+        #cardPreview {
+            display: none;
+        }
+    
+        aside {
+            display: none;
+        }
+    
+        section {
+            width: 100%;
+            padding: 0;
+            justify-content: center;
+        }
+    
+        .container-fluid {
+            margin: 0;
+            font-size: 1em;
+        }
+        @media screen and (max-width: 600px) {       
+            section {
+                .cardPrimaria {
+                    width: 90%;
+                    .cardSecundaria {            
+                        .cardTerciario {
+                            display: inline-flex;
+                            align-items: center;
+                            .card-img-top {
+                                width: 55%;
+                                padding: 0 0 0 0;
+                                border: none;
+                            }
+                            p{
+                                width: 100%;
+                                font-size: 1.3em;
+                            }
+                        }
+                    }
+                }
+
+                
+            }
+            .container-fluid{
+                font-size: 2em;
+            }
+            .redes {
+                padding-right: 1em;       
+                .iconos {
+                    width: 4em;
+                    margin-right: 1em;
+                }
+            }
+        }
+    }
+}

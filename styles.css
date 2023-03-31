@@ -1,0 +1,237 @@
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato-Black";
+  src: url("../fonts/Lato-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.navbar-header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.navbar-nav:hover {
+  font-family: "Lato-Black", sans-serif;
+}
+
+.container-fluid {
+  font-size: 1.2em;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin: 0 17% 0 17%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1em;
+}
+
+.nav {
+  display: inline-flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.navbar-nav li {
+  display: inline-flex;
+  align-items: center;
+}
+.navbar-nav li + li:before {
+  content: " | ";
+  color: #009999;
+}
+
+section {
+  width: 70%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding-left: 10%;
+}
+section .cardPrimaria {
+  display: inline-flex;
+  width: 28%;
+  height: auto;
+  margin: 1%;
+  border-radius: 10px;
+  background: #009999;
+  border: 10px solid #009999;
+}
+section .cardPrimaria:hover {
+  background: #9a2d9b;
+  border: 10px solid #9a2d9b;
+}
+section .cardPrimaria .cardSecundaria {
+  border: 3px dotted white;
+  border-radius: 10px;
+}
+section .cardPrimaria .cardSecundaria .cardTerciario {
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1vh solid #009999;
+}
+section .cardPrimaria .cardSecundaria .cardTerciario:hover {
+  border: 1vh solid #9a2d9b;
+}
+section .cardPrimaria .cardSecundaria .cardTerciario .card-img-top {
+  width: 100%;
+  height: 70%;
+  padding: 0 15% 0 15%;
+  border-bottom: 3px dotted #009999;
+}
+section .cardPrimaria .cardSecundaria .cardTerciario .card-img-top:hover {
+  border-color: #9a2d9b;
+}
+section .cardPrimaria .cardSecundaria .cardTerciario p {
+  height: 30%;
+  margin: 4vh 0 4vh 0;
+  text-align: center;
+}
+section .cardPrimaria .cardSecundaria .cardTerciario p:hover {
+  font-family: "Lato-Black", sans-serif;
+}
+
+.redes {
+  width: 100%;
+  text-align: right;
+}
+.redes .iconos {
+  background: #9a2d9b;
+  width: 4em;
+  border-radius: 50%;
+  align-items: flex-end;
+}
+
+aside {
+  display: inline-flex;
+  width: 24%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+aside .cardPri {
+  width: 45%;
+  display: inline-flex;
+  margin-bottom: 2vh;
+  height: 60%;
+  border-radius: 10px;
+  background: #9a2d9b;
+  border: 8px solid #9a2d9b;
+}
+aside .cardPri .cardSec {
+  border: 2px solid white;
+  border-radius: 10px;
+}
+aside .cardPri .cardSec .cardTer {
+  background-color: white;
+  padding: 2px;
+  border-radius: 10px;
+  border: 3px solid #9a2d9b;
+}
+aside .cardPri .cardSec .cardTer .card-img-top {
+  width: 80%;
+}
+aside .cardPri .cardSec .cardTer p {
+  margin: 1vh 0 1vh 0;
+  font-size: 0.7em;
+  text-align: center;
+}
+
+#cardPreview {
+  position: fixed;
+  top: 15%;
+  right: 8%;
+  width: 10%;
+  z-index: 9999;
+  background: white;
+  border: 5px solid #009999;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+#cardPreview img {
+  max-width: 100%;
+  height: auto;
+}
+#cardPreview p {
+  font-size: 0.8em;
+  color: #9a2d9b;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1367px) {
+  #cardPreview {
+    width: 10%;
+  }
+  aside {
+    width: 18%;
+  }
+  aside .cardPri {
+    width: 70%;
+  }
+  section {
+    width: 80%;
+    padding: 0;
+  }
+  .container-fluid {
+    margin: 0 5% 0 5%;
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 1367px) and (max-width: 1024px) {
+  #cardPreview {
+    display: none;
+  }
+  aside {
+    display: none;
+  }
+  section {
+    width: 100%;
+    padding: 0;
+    justify-content: center;
+  }
+  .container-fluid {
+    margin: 0;
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 1367px) and (max-width: 1024px) and (max-width: 600px) {
+  section .cardPrimaria {
+    width: 90%;
+  }
+  section .cardPrimaria .cardSecundaria .cardTerciario {
+    display: inline-flex;
+    align-items: center;
+  }
+  section .cardPrimaria .cardSecundaria .cardTerciario .card-img-top {
+    width: 55%;
+    padding: 0 0 0 0;
+    border: none;
+  }
+  section .cardPrimaria .cardSecundaria .cardTerciario p {
+    width: 100%;
+    font-size: 1.3em;
+  }
+  .container-fluid {
+    font-size: 2em;
+  }
+  .redes {
+    padding-right: 1em;
+  }
+  .redes .iconos {
+    width: 4em;
+    margin-right: 1em;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
