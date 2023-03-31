@@ -109,6 +109,9 @@ section .cardPrimaria .cardSecundaria .cardTerciario p:hover {
   border-radius: 50%;
   align-items: flex-end;
 }
+.redes .iconos:hover {
+  background: #009999;
+}
 
 aside {
   display: inline-flex;
