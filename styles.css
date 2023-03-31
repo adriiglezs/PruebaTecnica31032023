@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Lato";
   src: url("../fonts/Lato-Light.ttf") format("truetype");
@@ -48,6 +49,10 @@ body {
   color: #009999;
 }
 
+/* Con etiqueta semantica seccionamos los siguientes elementos, en los cuales se
+encuentran los estilos correspondientes que forma la tarjeta del producto principal
+además la cuestion dinamica del cursor, esta declarada con el hover en cada elemento
+que lo necesita */
 section {
   width: 70%;
   display: inline-flex;
@@ -66,6 +71,7 @@ section .cardPrimaria {
 }
 section .cardPrimaria:hover {
   background: #9a2d9b;
+  font-family: "Lato-Black", sans-serif;
   border: 10px solid #9a2d9b;
 }
 section .cardPrimaria .cardSecundaria {
@@ -79,7 +85,7 @@ section .cardPrimaria .cardSecundaria .cardTerciario {
   border: 1vh solid #009999;
 }
 section .cardPrimaria .cardSecundaria .cardTerciario:hover {
-  border: 1vh solid #9a2d9b;
+  border-color: #9a2d9b;
 }
 section .cardPrimaria .cardSecundaria .cardTerciario .card-img-top {
   width: 100%;
@@ -95,24 +101,9 @@ section .cardPrimaria .cardSecundaria .cardTerciario p {
   margin: 4vh 0 4vh 0;
   text-align: center;
 }
-section .cardPrimaria .cardSecundaria .cardTerciario p:hover {
-  font-family: "Lato-Black", sans-serif;
-}
 
-.redes {
-  width: 100%;
-  text-align: right;
-}
-.redes .iconos {
-  background: #9a2d9b;
-  width: 4em;
-  border-radius: 50%;
-  align-items: flex-end;
-}
-.redes .iconos:hover {
-  background: #009999;
-}
-
+/* en la seccion aside, se ubican los elemento de las tajetas que solo se mostraran en 
+visualizaciones de PC */
 aside {
   display: inline-flex;
   width: 24%;
@@ -146,6 +137,20 @@ aside .cardPri .cardSec .cardTer p {
   margin: 1vh 0 1vh 0;
   font-size: 0.7em;
   text-align: center;
+}
+
+.redes {
+  width: 100%;
+  text-align: right;
+}
+.redes .iconos {
+  background: #9a2d9b;
+  width: 4em;
+  border-radius: 50%;
+  align-items: flex-end;
+}
+.redes .iconos:hover {
+  background: #009999;
 }
 
 #cardPreview {
@@ -205,7 +210,7 @@ aside .cardPri .cardSec .cardTer p {
   }
   .container-fluid {
     margin: 0;
-    font-size: 1em;
+    font-size: 2em;
   }
 }
 @media screen and (max-width: 1367px) and (max-width: 1024px) and (max-width: 600px) {

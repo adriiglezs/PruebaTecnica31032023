@@ -1,3 +1,4 @@
+//Importamos las fuentes proporcionadas en un archivo ttf, y asignamos un nombre para usarlas en el proyecto con mayor facilidad
 @font-face {
     font-family: 'Lato';
     src: url('../fonts/Lato-Light.ttf') format('truetype');
@@ -12,23 +13,23 @@
     font-style: normal;
 }
 
-//variables
+//creamos doas variables en las que se colocan los colores verde y morado solicitados
 $color-verde: #009999;
 $color-morado: #9a2d9b;
 
+//indicamos que la navar ocupe un width de 100% de la pantalla, de esta forma no se sobrepondran otros elementos cuando se haga responsivo
 .navbar-header {
     display: flex;
     width: 100%;
     justify-content: center;
 }
-
+//indicamos mediante el hover el cambio de letra cuando el cursor pase por los elementos de la navar
 .navbar-nav {
     &:hover {
         font-family: 'Lato-Black', sans-serif;
-
     }
 }
-
+// para los elementos que se encuentran dentro del contenedor de la navar, se dan especificaciones para el formato global
 .container-fluid {
     font-size: 1.2em;
     display: flex;
@@ -37,20 +38,22 @@ $color-morado: #9a2d9b;
     margin: 0 17% 0 17%;
 }
 
+//Indicamos el formato de letra que deben ser usados en el area del body
 body {
     font-family: 'Lato', sans-serif;
     font-size: 1em;
 }
+//indicamos que los elementos de la navar se peguen de lado derecho, de acuerdo como se observa en el maquetado 
 .nav{
     display: inline-flex;
     justify-content: flex-end;
     flex-wrap: wrap;
 }
 
+//Incorporamos el elemento que mostrara visualmente la semparación de los elemntos li 
 .navbar-nav li {
     display: inline-flex;
     align-items: center;
-
     &+li {
         &:before {
             content: " | ";
@@ -58,14 +61,16 @@ body {
         }
     }
 }
-
+/* Con etiqueta semantica seccionamos los siguientes elementos, en los cuales se
+encuentran los estilos correspondientes que forma la tarjeta del producto principal
+además la cuestion dinamica del cursor, esta declarada con el hover en cada elemento
+que lo necesita */
 section {
     width: 70%;
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: flex-end;
     padding-left: 10%;
-
     .cardPrimaria {
         display: inline-flex;
         width: 28%;
@@ -74,55 +79,80 @@ section {
         border-radius: 10px;
         background: $color-verde;
         border: 10px solid $color-verde;
-
         &:hover {
             background: $color-morado;
+            font-family: 'Lato-Black', sans-serif;
             border: 10px solid $color-morado; // color de fondo al pasar el cursor
         }
-
         .cardSecundaria {
             border: 3px dotted white;
             border-radius: 10px;
-
             .cardTerciario {
                 background-color: white;
                 padding: 5px;
                 border-radius: 10px;
                 border: 1vh solid $color-verde;
-
                 &:hover {
-                    border: 1vh solid $color-morado; // color de fondo al pasar el cursor
+                    border-color:$color-morado; // color de fondo al pasar el cursor
                 }
-
                 .card-img-top {
                     width: 100%;
                     height: 70%;
                     padding: 0 15% 0 15%;
                     border-bottom: 3px dotted $color-verde;
-
                     &:hover {
                         border-color: $color-morado; // color de fondo al pasar el cursor
                     }
                 }
-
                 p {
                     height: 30%;
                     margin: 4vh 0 4vh 0;
                     text-align: center;
-
-                    &:hover {
-                        font-family: 'Lato-Black', sans-serif;
-                    }
                 }
             }
         }
     }
 }
-
+/* en la seccion aside, se ubican los elemento de las tajetas que solo se mostraran en 
+visualizaciones de PC */
+aside {
+    display: inline-flex;
+    width: 24%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    .cardPri {
+        width: 45%;
+        display: inline-flex;
+        margin-bottom: 2vh;
+        height: 60%;
+        border-radius: 10px;
+        background: $color-morado;
+        border: 8px solid $color-morado;
+        .cardSec {
+            border: 2px solid white;
+            border-radius: 10px;
+            .cardTer {
+                background-color: white;
+                padding: 2px;
+                border-radius: 10px;
+                border: 3px solid $color-morado;
+                .card-img-top {
+                    width: 80%;
+                }
+                p {
+                    margin: 1vh 0 1vh 0;
+                    font-size: 0.7em;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+//en esta area se encuentra el comtenedor con los iconos sociales
 .redes {
     width: 100%;
     text-align: right;
-
     .iconos {
         background: $color-morado;
         width: 4em;
@@ -133,48 +163,6 @@ section {
         }
     }
 }
-
-aside {
-    display: inline-flex;
-    width: 24%;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    flex-direction: column;
-
-    .cardPri {
-        width: 45%;
-        display: inline-flex;
-        margin-bottom: 2vh;
-        height: 60%;
-        border-radius: 10px;
-        background: $color-morado;
-        border: 8px solid $color-morado;
-
-        .cardSec {
-            border: 2px solid white;
-            border-radius: 10px;
-
-            .cardTer {
-                background-color: white;
-                padding: 2px;
-                border-radius: 10px;
-                border: 3px solid $color-morado;
-
-                .card-img-top {
-                    width: 80%;
-                }
-
-                p {
-                    margin: 1vh 0 1vh 0;
-                    font-size: 0.7em;
-                    text-align: center;
-                }
-
-            }
-        }
-    }
-}
-
 
 #cardPreview {
     position: fixed;
@@ -187,12 +175,10 @@ aside {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
-
     img {
         max-width: 100%;
         height: auto;
     }
-
     p {
         font-size: 0.8em;
         color: $color-morado;
@@ -208,20 +194,16 @@ aside {
     #cardPreview {
         width: 10%;
     }
-
     aside {
         width: 18%;
-
         .cardPri {
             width: 70%;
         }
     }
-
     section {
         width: 80%;
         padding: 0;
     }
-
     .container-fluid {
         margin: 0 5% 0 5%;
         font-size: 1.5em;
@@ -230,20 +212,17 @@ aside {
         #cardPreview {
             display: none;
         }
-    
         aside {
             display: none;
         }
-    
         section {
             width: 100%;
             padding: 0;
             justify-content: center;
         }
-    
         .container-fluid {
             margin: 0;
-            font-size: 1em;
+            font-size: 2em;
         }
         @media screen and (max-width: 600px) {       
             section {
@@ -264,9 +243,7 @@ aside {
                             }
                         }
                     }
-                }
-
-                
+                } 
             }
             .container-fluid{
                 font-size: 2em;
