@@ -11,6 +11,11 @@
   font-weight: normal;
   font-style: normal;
 }
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1em;
+}
+
 .navbar-header {
   display: flex;
   width: 100%;
@@ -27,11 +32,6 @@
   justify-content: flex-end;
   flex-wrap: wrap;
   margin: 0 17% 0 17%;
-}
-
-body {
-  font-family: "Lato", sans-serif;
-  font-size: 1em;
 }
 
 .nav {
@@ -177,6 +177,11 @@ aside .cardPri .cardSec .cardTer p {
   text-align: center;
 }
 
+/* En esta seccion , se encuentra los cambios en las responsividades solicitadas, se implemento el rompimiento en
+en los width 1367, 1024 y 600, para cumplir con la visualizacion del maquetado solicitado (el rompimiento se hace
+desde antes de llegar al necesario, para que no haya posibles errores).
+En las indicaciones de los estilos de esta seccion responsiva, solo se van modificando los elementos que lo necesitan,
+no es necesario incorporar nuevamente todos los elementos */
 @media screen and (max-width: 1367px) {
   #cardPreview {
     width: 10%;

@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarjeta de Producto</title>
+    <!-- Realizamos la importación, de librerias y elementos necesarios para nuestro maquetado -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 </head>
 
 <body>
+    <!-- Utilizamos una navar proporcionada por la libreria bootstrap, la cual modificamos, ya que contenia un boton 
+    de despligue de opciones al llegar a cierto tamaño de panatalla, esto para cumplir con el maquetado solicitado -->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Logo -->
@@ -35,7 +36,14 @@
 
         </div>
     </nav>
+    <!-- Se crea la seccion "section" mediante una etiqueta semantica, en la cual se incorporan todas las tarjetas de los productos,
+    los cuales, se incorporan por div y caracteristicas de la img y texto solicitado 
+
+    Además, cabe mencionar, al final de esta sección se incorporan los iconos de las redes sociales, con la finalidad
+    que se ubiquen en el mismo apartado-->
     <section>
+        <!-- cada tarjeta de producto se emplea de la siguiente forma, repitiendo el codigo dado que estamos en HTML 
+        y solo modificando la imagen y descripción del contenido -->
         <div class="cardPrimaria cardMiniatura">
             <div class="cardSecundaria">
                 <div class="cardTerciario">
@@ -96,6 +104,7 @@
                 </div>
             </div>
         </div>
+        <!-- Se colocan los iconos de forma continua, dentro de un div que contenga todos los elementos -->
         <div class="redes">
             <img class="iconos" src="/img/iconos_Youtube.svg" alt="YouTube" href="#">
             <img class="iconos" src="/img/iconos_Twitter.svg" alt="Twitter" href="#">
@@ -103,6 +112,8 @@
             <img class="iconos" src="/img/iconos_Facebook.svg" alt="Facebook" href="#">
         </div>
     </section>
+    <!-- Se crea la seccion "aside" mediante una etiqueta semantica, en la cual se incorporan todas las tarjetas de los productos,
+    los cuales son solo cuatro cos sus caracteristicas de la img y texto solicitado -->
     <aside>
         <div class="cardPri cardMiniatura">
             <div class="cardSec">
@@ -145,6 +156,7 @@
             </div>
         </div>
     </aside>
+    <!-- importamos nuestro js donde se encuentran la jquery para la cuestión dinamica solicitada-->
     <script src="miniatura.js"></script>
 </body>
 

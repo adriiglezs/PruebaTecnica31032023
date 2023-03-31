@@ -5,7 +5,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'Lato-Black';
     src: url('../fonts/Lato-Black.ttf') format('truetype');
@@ -16,6 +15,11 @@
 //creamos doas variables en las que se colocan los colores verde y morado solicitados
 $color-verde: #009999;
 $color-morado: #9a2d9b;
+//Indicamos el formato de letra que deben ser usados en el area del body
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+}
 
 //indicamos que la navar ocupe un width de 100% de la pantalla, de esta forma no se sobrepondran otros elementos cuando se haga responsivo
 .navbar-header {
@@ -38,18 +42,12 @@ $color-morado: #9a2d9b;
     margin: 0 17% 0 17%;
 }
 
-//Indicamos el formato de letra que deben ser usados en el area del body
-body {
-    font-family: 'Lato', sans-serif;
-    font-size: 1em;
-}
 //indicamos que los elementos de la navar se peguen de lado derecho, de acuerdo como se observa en el maquetado 
 .nav{
     display: inline-flex;
     justify-content: flex-end;
     flex-wrap: wrap;
 }
-
 //Incorporamos el elemento que mostrara visualmente la semparación de los elemntos li 
 .navbar-nav li {
     display: inline-flex;
@@ -93,7 +91,7 @@ section {
                 border-radius: 10px;
                 border: 1vh solid $color-verde;
                 &:hover {
-                    border-color:$color-morado; // color de fondo al pasar el cursor
+                    border-color: $color-morado; // color de fondo al pasar el cursor
                 }
                 .card-img-top {
                     width: 100%;
@@ -149,7 +147,7 @@ aside {
         }
     }
 }
-//en esta area se encuentra el comtenedor con los iconos sociales
+//en esta área se encuentra el contenedor con los iconos sociales
 .redes {
     width: 100%;
     text-align: right;
@@ -163,7 +161,7 @@ aside {
         }
     }
 }
-
+//para la funcion jquery en js, estos son los estilos que se le asignan cuando la miniatura es mostrada
 #cardPreview {
     position: fixed;
     top: 15%;
@@ -187,9 +185,11 @@ aside {
         text-align: center;
     }
 }
-
-
-
+/* En esta seccion , se encuentra los cambios en las responsividades solicitadas, se implemento el rompimiento en
+en los width 1367, 1024 y 600, para cumplir con la visualizacion del maquetado solicitado (el rompimiento se hace
+desde antes de llegar al necesario, para que no haya posibles errores).
+En las indicaciones de los estilos de esta seccion responsiva, solo se van modificando los elementos que lo necesitan,
+no es necesario incorporar nuevamente todos los elementos */
 @media screen and (max-width: 1367px) {
     #cardPreview {
         width: 10%;
